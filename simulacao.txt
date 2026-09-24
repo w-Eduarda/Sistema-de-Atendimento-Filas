@@ -1,0 +1,50 @@
+=== DESAFIO FINAL: 20 CLIENTES ===
+
+Clientes na ordem de chegada:
+  A01 - Ana (prioridade 3: Normal)
+  A02 - Bruno (prioridade 1: Emergência)
+  A03 - Carla (prioridade 1: Emergência)
+  A04 - Diego (prioridade 3: Normal)
+  A05 - Elisa (prioridade 2: Prioritário)
+  A06 - Fabio (prioridade 1: Emergência)
+  A07 - Gabriela (prioridade 1: Emergência)
+  A08 - Hugo (prioridade 1: Emergência)
+  A09 - Iara (prioridade 3: Normal)
+  A10 - Joao (prioridade 1: Emergência)
+  A11 - Karen (prioridade 3: Normal)
+  A12 - Lucas (prioridade 3: Normal)
+  A13 - Marina (prioridade 3: Normal)
+  A14 - Nicolas (prioridade 1: Emergência)
+  A15 - Olivia (prioridade 3: Normal)
+  A16 - Paulo (prioridade 2: Prioritário)
+  A17 - Rafaela (prioridade 1: Emergência)
+  A18 - Sergio (prioridade 1: Emergência)
+  A19 - Tania (prioridade 1: Emergência)
+  A20 - Vitor (prioridade 1: Emergência)
+
+Ordem de atendimento - fila clássica (FIFO):
+  A01 -> A02 -> A03 -> A04 -> A05 -> A06 -> A07 -> A08 -> A09 -> A10 -> A11 -> A12 -> A13 -> A14 -> A15 -> A16 -> A17 -> A18 -> A19 -> A20
+
+Comportamento - fila circular:
+Capacidade: 5
+Estado inicial: front=0, rear=0
+Inseriu A01: front=0, rear=1 | [0: A01] [1: vazio] [2: vazio] [3: vazio] [4: vazio]
+Inseriu A02: front=0, rear=2 | [0: A01] [1: A02] [2: vazio] [3: vazio] [4: vazio]
+Inseriu A03: front=0, rear=3 | [0: A01] [1: A02] [2: A03] [3: vazio] [4: vazio]
+Inseriu A04: front=0, rear=4 | [0: A01] [1: A02] [2: A03] [3: A04] [4: vazio]
+Inseriu A05: front=0, rear=0 | [0: A01] [1: A02] [2: A03] [3: A04] [4: A05]
+Removeu A01: front=1, rear=0 | [0: vazio] [1: A02] [2: A03] [3: A04] [4: A05]
+Removeu A02: front=2, rear=0 | [0: vazio] [1: vazio] [2: A03] [3: A04] [4: A05]
+Reutilizou posição com A06: front=2, rear=1 | [0: A06] [1: vazio] [2: A03] [3: A04] [4: A05]
+Removeu A03: front=3, rear=1 | [0: A06] [1: vazio] [2: vazio] [3: A04] [4: A05]
+Removeu A04: front=4, rear=1 | [0: A06] [1: vazio] [2: vazio] [3: vazio] [4: A05]
+Removeu A05: front=0, rear=1 | [0: A06] [1: vazio] [2: vazio] [3: vazio] [4: vazio]
+Removeu A06: front=1, rear=1 | [0: vazio] [1: vazio] [2: vazio] [3: vazio] [4: vazio]
+
+Ordem de atendimento - fila de prioridade:
+  A02 -> A03 -> A06 -> A07 -> A08 -> A10 -> A14 -> A17 -> A18 -> A19 -> A20 -> A05 -> A16 -> A01 -> A04 -> A09 -> A11 -> A12 -> A13 -> A15
+
+Comparação:
+  Fila clássica preserva integralmente a ordem de chegada.
+  Fila circular mantém FIFO e reutiliza posições do vetor.
+  Fila de prioridade atende primeiro os menores valores de prioridade.
