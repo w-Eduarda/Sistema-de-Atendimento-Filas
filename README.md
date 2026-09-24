@@ -3,7 +3,9 @@
 ## Identificação
 
 **Aluno:** Maria Eduarda Martins
+
 **Disciplina:** Estrutura de Dados II
+
 **Data:** 23/09/2026
 
 ## Objetivo
